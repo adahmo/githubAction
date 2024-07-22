@@ -1,9 +1,15 @@
-def hello():
-    print("hi")
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-def bye():
-    print("bye")
+    steps:
+      - uses: actions/checkout@v3
 
-
-print(hello())
+      - name: demo workflow job
+        run: echo This is a demo start workflow
